@@ -17,7 +17,7 @@ static int borderpx = 25;
  * 4: value of shell in /etc/passwd
  * 5: value of shell in config.h
  */
-static char *shell = "/bin/sh";
+static char *shell = "/bin/zsh";
 char *utmp = NULL;
 /* scroll program: to enable use a string like "scroll" */
 char *scroll = NULL;
@@ -113,40 +113,40 @@ float alphaUnfocus;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
-	"#282828", /* hard contrast: #1d2021 / soft contrast: #32302f */
-	"#cc241d",
-	"#98971a",
-	"#d79921",
-	"#458588",
-	"#b16286",
-	"#689d6a",
-	"#a89984",
-	"#928374",
-	"#fb4934",
-	"#b8bb26",
-	"#fabd2f",
-	"#83a598",
-	"#d3869b",
-	"#8ec07c",
-	"#ebdbb2",
-	[255] = 0,
-	/* more colors can be added after 255 to use with DefaultXX */
-	"#add8e6", /* 256 -> cursor */
-	"#555555", /* 257 -> rev cursor*/
-	"#000000", /* 258 -> bg */
-	"#ffffff", /* 259 -> fg */
+
+  /* 8 normal colors */
+  [0] = "#000000", /* black   */
+  [1] = "#B0B0B0", /* red     */
+  [2] = "#C8C8C8", /* green   */
+  [3] = "#D8D8D8", /* yellow  */
+  [4] = "#E8E8E8", /* blue    */
+  [5] = "#F4F4F4", /* magenta */
+  [6] = "#FAFAFA", /* cyan    */
+  [7] = "#f5f5f5", /* white   */
+
+  /* 8 bright colors */
+  [8]  = "#ababab",  /* black   */
+  [9]  = "#B0B0B0",  /* red     */
+  [10] = "#C8C8C8", /* green   */
+  [11] = "#D8D8D8", /* yellow  */
+  [12] = "#E8E8E8", /* blue    */
+  [13] = "#F4F4F4", /* magenta */
+  [14] = "#FAFAFA", /* cyan    */
+  [15] = "#f5f5f5", /* white   */
+
+  /* special colors */
+  [256] = "#000000", /* background */
+  [257] = "#f5f5f5", /* foreground */
+  [258] = "#f5f5f5",     /* cursor */
 };
 
-
-/*
- * Default colors (colorname index)
- * foreground, background, cursor, reverse cursor
- */
-unsigned int defaultfg = 259;
-unsigned int defaultbg = 258;
-unsigned int defaultcs = 256;
-unsigned int defaultrcs = 257;
-unsigned int background = 258;
+/* Default colors (colorname index)
+ * foreground, background, cursor */
+ unsigned int defaultbg = 0;
+ unsigned int defaultfg = 257;
+ unsigned int defaultcs = 258;
+ unsigned int defaultrcs= 258;
+ unsigned int background = 256;
 
 /*
  * Default shape of cursor

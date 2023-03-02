@@ -19,6 +19,7 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ./zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Example aliases
 alias zshconfig="mate ~/.zshrc"
@@ -29,6 +30,9 @@ alias ls='ls --color=auto'
 alias zshrc='nvim .zshrc'
 alias reboot='sudo reboot'
 alias poweroff='sudo poweroff'
+alias rm='sudo rm -r'
+alias addgit='git commit -m'
+alias upgit='git push origin main'
 
 # Colores
 cat ~/.cache/wal/sequences
